@@ -4,6 +4,7 @@ import hooks.WebHooks;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static configuration.Configuration.getFromProperties;
 import static steps.AutorizationPageSteps.authorizationInJira;
 import static steps.BugPageSteps.*;
 import static steps.MainPageSteps.*;
@@ -21,7 +22,7 @@ public class JiraTests extends WebHooks {
     @DisplayName("Задание по проверке статуса задачи TestSelenium")
     public void test2() {
         authorizationInJira();
-        seleniumTaskSearch();
+        seleniumTaskSearch("TestSelenium");
         checkStatus("ГОТОВО");
         checkVersion("Version 2.0");
     }
