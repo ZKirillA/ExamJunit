@@ -4,7 +4,6 @@ import hooks.WebHooks;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static configuration.Configuration.getFromProperties;
 import static steps.AutorizationPageSteps.authorizationInJira;
 import static steps.BugPageSteps.*;
 import static steps.MainPageSteps.*;
