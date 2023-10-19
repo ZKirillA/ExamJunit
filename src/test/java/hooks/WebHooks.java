@@ -10,6 +10,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
 import static configuration.Configuration.getFromProperties;
+
 public class WebHooks {
 
     @BeforeAll
@@ -19,13 +20,14 @@ public class WebHooks {
         WebDriverRunner.getWebDriver().manage().window().maximize();
         Configuration.timeout = 12000;
     }
+
     @AfterEach
-    public void closeDriver(){
+    public void closeDriver() {
         Selenide.webdriver().driver().close();
     }
 
     @BeforeAll
-    public static void allureSubThreadParallel(){
+    public static void allureSubThreadParallel() {
         String listenerName = "AllureSelenide";
         if (!(SelenideLogger.hasListener(listenerName)))
             SelenideLogger.addListener(listenerName,
